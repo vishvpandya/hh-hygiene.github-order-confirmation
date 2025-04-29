@@ -96,8 +96,6 @@
 
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,12 +118,12 @@
         form {
             background-color: white;
             padding: 20px;
-            max-width: 400px;
+            max-width: 500px;
             margin: auto;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        input, textarea {
+        input, textarea, select {
             width: 100%;
             padding: 10px;
             margin: 8px 0;
@@ -144,6 +142,15 @@
         }
         button:hover {
             background-color: #218838;
+        }
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .price-section div {
+            font-size: 16px;
+            font-weight: bold;
         }
         .error {
             color: red;
@@ -204,19 +211,47 @@
         required
     ></textarea>
 
+    <!-- Pad Type Selection -->
+    <select id="padType" name="Pad Type" onchange="updatePrice()" required>
+        <option value="xxl" data-price="42">XXL Pad - ₹42</option>
+        <option value="xxxl" data-price="45">XXXL Pad - ₹45</option>
+    </select>
+
     <!-- Quantity -->
     <input
         type="number"
+        id="quantity"
         name="Quantity"
         placeholder="Quantity"
         min="1"
+        value="1"
+        oninput="updatePrice()"
         required
     >
+
+    <!-- Price Section -->
+    <div class="price-section">
+        <div>Price Per Pad: ₹<span id="unitPrice">42</span></div>
+        <div>Subtotal: ₹<span id="subtotal">42</span></div>
+    </div>
 
     <button type="submit">Send Order</button>
 </form>
 
 <script>
+// Update Price when quantity or pad type changes
+function updatePrice() {
+    const padType = document.getElementById('padType');
+    const quantity = document.getElementById('quantity').value;
+    const unitPrice = parseFloat(padType.selectedOptions[0].getAttribute('data-price'));
+    const subtotal = unitPrice * quantity;
+
+    // Update UI
+    document.getElementById('unitPrice').innerText = unitPrice.toFixed(2);
+    document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+}
+
+// Validate form
 function validateForm() {
     let valid = true;
 
@@ -244,3 +279,4 @@ function validateForm() {
 
 </body>
 </html>
+
