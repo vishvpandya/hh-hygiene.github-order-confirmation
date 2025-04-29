@@ -1,0 +1,246 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order Sanitary Pads</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .product {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: auto;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Order Now</h1>
+  <div class="product">
+    <img src="your-product-image.jpg" alt="Sanitary Pad">
+    <h2>Sanitary Pad</h2>
+    <p>Comfortable, Safe & Reliable</p>
+    <p><strong>Price:</strong> ₹99 per pack</p>
+
+    <form id="order-form">
+      <input type="text" name="customer_name" placeholder="Your Name" required>
+      <input type="email" name="customer_email" placeholder="Your Email" required>
+      <input type="text" name="phone_number" placeholder="Your Phone Number" required>
+      <textarea name="delivery_address" placeholder="Your Address" rows="3" required></textarea>
+      <input type="number" name="quantity" placeholder="Quantity" min="1" required>
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+  EmailJS SDK -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("oZeKgydM-xEQmTqFB"); // यहाँ अपनी Public Key डालें
+    })();
+
+    document.getElementById('order-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm("service_zpnwd7c", "template_bqbz07i", this)
+        .then(function() {
+          alert('Order placed successfully!');
+        }, function(error) {
+          alert('Failed to place order. Please try again.');
+          console.log('FAILED...', error);
+        });
+    });
+  </script>
+
+</body>
+</html> --> 
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Sanitary Pads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .product {
+            text-align: center;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product">
+    <h1>Order Sanitary Pads</h1>
+    <img src="pngegg.png" alt="Sanitary Pads">
+</div>
+
+<form action="https://formsubmit.co/hh.hygiene4@gmail.com" method="POST" onsubmit="return validateForm()">
+    <!-- Hidden FormSubmit Fields -->
+    <input type="hidden" name="_subject" value="New Pad Order Received!">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <!-- Name: alphabets & spaces only -->
+    <input
+        type="text"
+        id="name"
+        name="Customer Name"
+        placeholder="Enter your name"
+        pattern="[A-Za-z ]+"
+        title="Name should contain letters and spaces only."
+        required
+    >
+    <div id="nameError" class="error">कृपया केवल अक्षर और स्पेस का उपयोग करें।</div>
+
+    <!-- Email: default HTML validation -->
+    <input
+        type="email"
+        name="Customer Email"
+        placeholder="Enter your email"
+        required
+    >
+
+    <!-- Phone: digits only -->
+    <input
+        type="tel"
+        id="phone"
+        name="Phone Number"
+        placeholder="Enter your phone number"
+        pattern="[0-9]{10,15}"
+        title="Phone number should contain 10–15 digits only."
+        required
+    >
+    <div id="phoneError" class="error">कृपया 10–15 अंकों वाला नंबर दर्ज करें।</div>
+
+    <!-- Address -->
+    <textarea
+        name="Delivery Address"
+        placeholder="Enter your delivery address"
+        required
+    ></textarea>
+
+    <!-- Quantity -->
+    <input
+        type="number"
+        name="Quantity"
+        placeholder="Quantity"
+        min="1"
+        required
+    >
+
+    <button type="submit">Send Order</button>
+</form>
+
+<script>
+function validateForm() {
+    let valid = true;
+
+    const nameInput = document.getElementById('name');
+    const nameError = document.getElementById('nameError');
+    if (!nameInput.checkValidity()) {
+        nameError.style.display = 'block';
+        valid = false;
+    } else {
+        nameError.style.display = 'none';
+    }
+
+    const phoneInput = document.getElementById('phone');
+    const phoneError = document.getElementById('phoneError');
+    if (!phoneInput.checkValidity()) {
+        phoneError.style.display = 'block';
+        valid = false;
+    } else {
+        phoneError.style.display = 'none';
+    }
+
+    return valid;
+}
+</script>
+
+</body>
+</html>
