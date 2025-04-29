@@ -290,8 +290,7 @@
 
 
 
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -358,19 +357,19 @@
 
 <div class="product">
     <h1>Order Sanitary Pads</h1>
+    <!-- Replace with your actual product image URL -->
     <img src="pngegg.png" alt="Sanitary Pads">
 </div>
 
 <form action="https://formsubmit.co/hh.hygiene4@gmail.com" method="POST" onsubmit="return validateForm()">
-    <!-- Hidden FormSubmit Fields -->
+    <!-- FormSubmit settings -->
     <input type="hidden" name="_subject" value="New Pad Order Received!">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
+    <!-- Hidden field for total amount -->
     <input type="hidden" id="totalAmount" name="Total Amount (₹)">
-    <!-- Optional: Redirect after submit -->
-    <!-- <input type="hidden" name="_next" value="thankyou.html"> -->
 
-    <!-- Name -->
+    <!-- Customer Name -->
     <input
         type="text"
         id="name"
@@ -382,15 +381,14 @@
     >
     <div id="nameError" class="error">कृपया केवल अक्षर और स्पेस का उपयोग करें।</div>
 
-    <!-- Email -->
+    <!-- Customer Email (optional) -->
     <input
         type="email"
         name="Customer Email"
-        placeholder="Enter your email"
-        required
+        placeholder="Enter your email (optional)"
     >
 
-    <!-- Phone -->
+    <!-- Phone Number -->
     <input
         type="tel"
         id="phone"
@@ -402,14 +400,14 @@
     >
     <div id="phoneError" class="error">कृपया 10–15 अंकों वाला नंबर दर्ज करें।</div>
 
-    <!-- Address -->
+    <!-- Delivery Address -->
     <textarea
         name="Delivery Address"
         placeholder="Enter your delivery address"
         required
     ></textarea>
 
-    <!-- Pad Type -->
+    <!-- Pad Type Selection -->
     <select id="padType" name="Pad Type" onchange="updatePrice()" required>
         <option value="XXL" data-price="42">XXL Pad - ₹42</option>
         <option value="XXXL" data-price="45">XXXL Pad - ₹45</option>
@@ -445,8 +443,6 @@ function updatePrice() {
 
     document.getElementById('unitPrice').innerText = unitPrice.toFixed(2);
     document.getElementById('subtotal').innerText = subtotal.toFixed(2);
-
-    // Set hidden total input
     document.getElementById('totalAmount').value = subtotal.toFixed(2);
 }
 
@@ -472,13 +468,13 @@ function validateForm() {
     }
 
     updatePrice(); // ensure total is set before submit
-
     return valid;
 }
 
-// initialize price when page loads
+// initialize values on page load
 window.onload = updatePrice;
 </script>
 
 </body>
 </html>
+
