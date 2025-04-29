@@ -94,9 +94,204 @@
 
 
 
-
+<!-- 
 
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Sanitary Pads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .product {
+            text-align: center;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .price-section div {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product">
+    <h1>Order Sanitary Pads</h1>
+    <img src="pngegg.png" alt="Sanitary Pads">
+</div>
+
+<form action="https://formsubmit.co/hh.hygiene4@gmail.com" method="POST" onsubmit="return validateForm()">
+    <!-- Hidden FormSubmit Fields -->
+<!--     <input type="hidden" name="_subject" value="New Pad Order Received!">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table"> -->
+
+    <!-- Name: alphabets & spaces only -->
+<!--     <input
+        type="text"
+        id="name"
+        name="Customer Name"
+        placeholder="Enter your name"
+        pattern="[A-Za-z ]+"
+        title="Name should contain letters and spaces only."
+        required
+    >
+    <div id="nameError" class="error">कृपया केवल अक्षर और स्पेस का उपयोग करें।</div>
+
+    <!-- Email: default HTML validation -->
+<!--     <input
+        type="email"
+        name="Customer Email"
+        placeholder="Enter your email"
+        required
+    > -->
+
+    <!-- Phone: digits only -->
+<!--     <input
+        type="tel"
+        id="phone"
+        name="Phone Number"
+        placeholder="Enter your phone number"
+        pattern="[0-9]{10,15}"
+        title="Phone number should contain 10–15 digits only."
+        required
+    > -->
+<!--     <div id="phoneError" class="error">कृपया 10–15 अंकों वाला नंबर दर्ज करें।</div> -->
+
+    <!-- Address -->
+<!--     <textarea
+        name="Delivery Address"
+        placeholder="Enter your delivery address"
+        required
+    ></textarea> -->
+
+    <!-- Pad Type Selection -->
+<!--     <select id="padType" name="Pad Type" onchange="updatePrice()" required>
+        <option value="xxl" data-price="42">XXL Pad - ₹42</option>
+        <option value="xxxl" data-price="45">XXXL Pad - ₹45</option>
+    </select>
+
+    <!-- Quantity -->
+<!--     <input
+        type="number"
+        id="quantity"
+        name="Quantity"
+        placeholder="Quantity"
+        min="1"
+        value="1"
+        oninput="updatePrice()"
+        required -->
+    > -->
+
+    <!-- Price Section -->
+<!--     <div class="price-section">
+        <div>Price Per Pad: ₹<span id="unitPrice">42</span></div>
+        <div>Subtotal: ₹<span id="subtotal">42</span></div>
+    </div>
+
+    <button type="submit">Send Order</button>
+</form>
+
+<script> -->
+<!-- // Update Price when quantity or pad type changes
+// function updatePrice() {
+//     const padType = document.getElementById('padType');
+//     const quantity = document.getElementById('quantity').value;
+//     const unitPrice = parseFloat(padType.selectedOptions[0].getAttribute('data-price'));
+//     const subtotal = unitPrice * quantity; -->
+<!-- 
+//     // Update UI
+//     document.getElementById('unitPrice').innerText = unitPrice.toFixed(2);
+//     document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+// }
+ -->
+<!-- // Validate form
+// function validateForm() {
+//     let valid = true;
+
+//     const nameInput = document.getElementById('name');
+//     const nameError = document.getElementById('nameError');
+//     if (!nameInput.checkValidity()) { -->
+<!-- //         nameError.style.display = 'block'; -->
+<!-- //         valid = false;
+//     } else {
+//         nameError.style.display = 'none';
+//     }
+
+//     const phoneInput = document.getElementById('phone');
+//     const phoneError = document.getElementById('phoneError');
+//     if (!phoneInput.checkValidity()) {
+//         phoneError.style.display = 'block';
+//         valid = false;
+//     } else {
+//         phoneError.style.display = 'none';
+//     }
+
+//     return valid; -->
+<!-- // }
+// </script>
+
+// </body>
+// </html> -->
+
+ --> -->
+
+
+
+
+
+
+
+
+
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -171,8 +366,11 @@
     <input type="hidden" name="_subject" value="New Pad Order Received!">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
+    <input type="hidden" id="totalAmount" name="Total Amount (₹)">
+    <!-- Optional: Redirect after submit -->
+    <!-- <input type="hidden" name="_next" value="thankyou.html"> -->
 
-    <!-- Name: alphabets & spaces only -->
+    <!-- Name -->
     <input
         type="text"
         id="name"
@@ -184,7 +382,7 @@
     >
     <div id="nameError" class="error">कृपया केवल अक्षर और स्पेस का उपयोग करें।</div>
 
-    <!-- Email: default HTML validation -->
+    <!-- Email -->
     <input
         type="email"
         name="Customer Email"
@@ -192,7 +390,7 @@
         required
     >
 
-    <!-- Phone: digits only -->
+    <!-- Phone -->
     <input
         type="tel"
         id="phone"
@@ -211,10 +409,10 @@
         required
     ></textarea>
 
-    <!-- Pad Type Selection -->
+    <!-- Pad Type -->
     <select id="padType" name="Pad Type" onchange="updatePrice()" required>
-        <option value="xxl" data-price="42">XXL Pad - ₹42</option>
-        <option value="xxxl" data-price="45">XXXL Pad - ₹45</option>
+        <option value="XXL" data-price="42">XXL Pad - ₹42</option>
+        <option value="XXXL" data-price="45">XXXL Pad - ₹45</option>
     </select>
 
     <!-- Quantity -->
@@ -229,7 +427,7 @@
         required
     >
 
-    <!-- Price Section -->
+    <!-- Price Display -->
     <div class="price-section">
         <div>Price Per Pad: ₹<span id="unitPrice">42</span></div>
         <div>Subtotal: ₹<span id="subtotal">42</span></div>
@@ -239,19 +437,19 @@
 </form>
 
 <script>
-// Update Price when quantity or pad type changes
 function updatePrice() {
     const padType = document.getElementById('padType');
     const quantity = document.getElementById('quantity').value;
     const unitPrice = parseFloat(padType.selectedOptions[0].getAttribute('data-price'));
     const subtotal = unitPrice * quantity;
 
-    // Update UI
     document.getElementById('unitPrice').innerText = unitPrice.toFixed(2);
     document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+
+    // Set hidden total input
+    document.getElementById('totalAmount').value = subtotal.toFixed(2);
 }
 
-// Validate form
 function validateForm() {
     let valid = true;
 
@@ -273,10 +471,14 @@ function validateForm() {
         phoneError.style.display = 'none';
     }
 
+    updatePrice(); // ensure total is set before submit
+
     return valid;
 }
+
+// initialize price when page loads
+window.onload = updatePrice;
 </script>
 
 </body>
 </html>
-
